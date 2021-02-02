@@ -3,6 +3,7 @@
         border: 1px solid black;
         padding: 3px;
         background-color: #eee;
+        cursor: pointer;
     }
     .active{
         background-color: white;
