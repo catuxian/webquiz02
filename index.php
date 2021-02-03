@@ -16,10 +16,7 @@ include_once "base.php";
 </head>
 
 <body>
-	<div id="alerr" style="background:rgba(51,51,51,0.8); color:#FFF; min-height:100px; width:300px; position:fixed; display:none; z-index:9999; overflow:auto;">
-		<pre id="ssaa"></pre>
-	</div>
-	<iframe name="back" style="display:none;"></iframe>
+
 	<div id="all">
 		<div id="title">
 			<?= date("m 月 d 號 l "); ?>| 今日瀏覽: <?= $_SESSION['visited']; ?> | 累積瀏覽: <?= $Visited->q("select sum(`total`) from `visited`")[0][0]; ?>
