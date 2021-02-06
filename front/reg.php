@@ -38,7 +38,7 @@
 
         if(acc!=""&&pw!=""&&pw2!=""&&email!=""){
             if(pw==pw2){
-                $.post("api/chk_acc.php",{acc},(re)=>{
+                $.get("api/chk_acc.php",{acc},(re)=>{
                     if(re=='1'){
                         alert("帳號重複");
                     }else{

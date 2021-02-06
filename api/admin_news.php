@@ -10,5 +10,5 @@
             $News->save($news);
         }
     }
-    to("admin.php?do=news");
+    to("../admin.php?do=news");
 ?>

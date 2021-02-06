@@ -49,8 +49,6 @@
         </table>
     </form>
 </fieldset>
-
-
 <script>
     function reg() {
         let acc = $("#acc").val();

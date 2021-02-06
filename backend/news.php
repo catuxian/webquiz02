@@ -17,19 +17,18 @@
             $posts = $News->all(" limit $start,$div");
             foreach ($posts as $key => $post) {
             ?>
-                <tr>
-                    <td><?= $post['id']; ?></td>
-                    <td><?= $post['title']; ?></td>
-                    <td><input type="checkbox" name="sh[]" value="<?= $post['id']; ?>"  <?=($post['sh']==1)?"checked":"";?>></td>
-                    <td><input type="checkbox" name="del[]" value="<?= $post['id']; ?>"></td>
-                    <input type="hidden" name="id[]" value="<?= $post['id']; ?>">
+                <td><?= $post['id']; ?></td>
+                <td><?= $post['title']; ?></td>
+                <td><input type="checkbox" name="sh[]" value="<?= $post['id']; ?>" <?= ($post['sh'] == 1) ? "checked" : ""; ?>></td>
+                <td><input type="checkbox" name="del[]" value="<?= $post['id']; ?>"></td>
+                <input type="hidden" name="id[]" value="<?= $post['id']; ?>">
                 </tr>
             <?php
             }
             ?>
         </table>
         <div class="ct">
-            <?php
+        <?php
             if (($now - 1) > 0) {
                 echo "<a href='?do=news&p=" . ($now - 1) . "'><</a>";
             }
@@ -43,5 +42,6 @@
             ?>
         </div>
         <div class="ct"><input type="submit" value="確定修改"></div>
+        </div>
     </form>
 </fieldset>

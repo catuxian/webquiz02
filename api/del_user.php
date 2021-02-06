@@ -6,6 +6,5 @@
             $User->del($id);
         }
     }
-
     to("../admin.php?do=user");
 ?>

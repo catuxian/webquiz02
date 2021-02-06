@@ -1,12 +1,5 @@
-<style>
-    .title {
-        color: blue;
-        cursor: pointer;
-    }
-</style>
-
 <fieldset>
-    <legend>目前位置:首頁>最新文章區</legend>
+    <legend>目前位置：首頁 > 最新文章區</legend>
     <table>
         <tr>
             <td>標題</td>
@@ -35,7 +28,7 @@
                         $chk = $Log->find(['user' => $_SESSION['login'], 'news' => $post['id']]);
                         if (!empty($chk)) {
                     ?>
-                            <a href="#" id="good<?= $post['id']; ?>" onclick="good('<?= $post['id']; ?>','1','<?= $_SESSION['login']; ?>')">收回讚</a>
+                            <a href="#" id="good<?= $post['id']; ?>" onclick="good('<?= $post['id']; ?>','2','<?= $_SESSION['login']; ?>')">收回讚</a>
                         <?php
                         } else {
 
@@ -54,24 +47,25 @@
         ?>
     </table>
     <div>
-        <?php
-        if (($now - 1) > 0) {
-            echo "<a href='?do=news&p=" . ($now - 1) . "'><</a>";
-        }
-        for ($i = 1; $i <= $pages; $i++) {
-            $font = ($now == $i) ? "24px" : "18px";
-            echo "<a href='?do=news&p=$i' style='font-size:$font'>$i</a>";
-        }
-        if (($now + 1) <= $pages) {
-            echo "<a href='?do=news&p=" . ($now + 1) . "'>></a>";
-        }
+    <?php
+            if(($now-1)>0){
+                echo "<a href='?do=news&p=".($now-1)."'> < </a>";
+            }
+            for($i=1;$i<=$pages;$i++){
+                $font=($now==$i)?"24px;":"18px";
+                echo "<a href='?do=news&p=$i' style='font-size:$font'> $i </a>";
+            }
+            if(($now+1)<=$pages){
+                echo "<a href='?do=news&p=".($now+1)."'> > </a>";
+            }
+
+
         ?>
     </div>
 </fieldset>
-
 <script>
-    $(".title").on("click", function() {
-        $(this).next().children().eq(0).toggle();
-        $(this).next().children().eq(1).toggle();
-    })
+$(".title").on("click",function(){
+    $(this).next().children().eq(0).toggle();
+    $(this).next().children().eq(1).toggle();
+})
 </script>

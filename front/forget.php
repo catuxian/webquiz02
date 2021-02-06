@@ -15,7 +15,6 @@
         </tr>
     </table>
 </fieldset>
-
 <script>
     function findPw(){
         let email=$("#email").val();

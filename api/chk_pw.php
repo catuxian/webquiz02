@@ -11,5 +11,4 @@
         echo "1";
         $_SESSION['login']=$acc;
     }
-
 ?>

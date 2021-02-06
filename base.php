@@ -105,13 +105,12 @@
     $Que=new DB("que");
     $User=new DB("user");
 
-
     $visited=$Visited->find(['date'=>date("Y-m-d")]);
+
     if(empty($visited)){
-        $Visited->save(['date'=>date("Y-m-d"),"total"=>1]);
+        $Visited->save(['date'=>date("Y-m-d"),'total'=>1]);
         $visited=$Visited->find(['date'=>date("Y-m-d")]);
     }
-
     if(empty($_SESSION['visited'])){
         $visited['total']++;
         $Visited->save($visited);
